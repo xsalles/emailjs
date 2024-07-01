@@ -1,6 +1,18 @@
 import styles from "../styles.module.css";
+import { useState } from "react";
 
 export default function Contact() {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const clearText = () => {
+    setName(' ');
+    setEmail(' ');
+    setMessage(' ');
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.sectionContainer}>
@@ -12,15 +24,19 @@ export default function Contact() {
         <form className={styles.formContainer}>
           <label htmlFor="name">Name</label>
           <textarea
+            onChange={(e) => setName(e.target.value)}
             className={styles.textArea}
             name="name"
+            value={name}
             id="name"
           ></textarea>
           <label className={styles.space} htmlFor="email">
             Email
           </label>
           <textarea
+            onChange={(e) => setEmail(e.target.value)}
             className={styles.textArea}
+            value={email}
             name="email"
             id="email"
           ></textarea>
@@ -28,8 +44,10 @@ export default function Contact() {
             Message
           </label>
           <textarea
+            onChange={(e) => setMessage(e.target.value)}
             placeholder="Type your message..."
             className={styles.textAreaMessage}
+            value={message}
             name="message"
             id="message"
           ></textarea>
@@ -43,7 +61,9 @@ export default function Contact() {
             </a>
           </label>
         </div>
-        <button className={styles.button}>Enviar</button>
+        <button type="submit" onClick={clearText} className={styles.button}>
+          Enviar
+        </button>
       </div>
     </div>
   );
