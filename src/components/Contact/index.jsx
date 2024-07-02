@@ -44,7 +44,7 @@ export default function Contact() {
   return (
     <div className={styles.container}>
       <div className={styles.sectionContainer}>
-        <h2 className={styles.sectionHeading}>Contact us</h2>
+        <h2 className={styles.sectionHeading}>Newsletter</h2>
         <p className={styles.sectionText}>
           Tire suas dúvidas enviando uma mensagem diretamente para o nosso
           email!

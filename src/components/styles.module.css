@@ -1,13 +1,12 @@
 .container {
   display: flex;
-  
   width: 768px;
   height: 830px;
-  margin-left: 336px;
-  background-color: #fff;
+  margin-left: center;
+  background: linear-gradient(40deg, #ffffff, #82a6d5 );
   box-sizing: border-box;
   border-radius: 100px;
-  box-shadow: -20px 10px 10px rgb(0, 0, 0)
+  box-shadow: -30px 10px 10px rgb(0, 0, 0);
 }
 
 .sectionContainer {
@@ -62,6 +61,7 @@
   box-sizing: border-box;
   border: 1.5px solid black;
   caret-color: black;
+  resize: none;
 }
 
 .termsContainer {
@@ -97,4 +97,12 @@
   margin-left: 270.5px;
   margin-top: 24px;
   cursor: pointer;
+}
+
+@media (max-width: 795px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
 }
