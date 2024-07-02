@@ -1,19 +1,23 @@
 * {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   caret-color: transparent;
   resize: none;
 }
 
-body {
+body{
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  padding: 64px;
-  background-color: #505050;  
-  :-webkit-scrollbar {
-    width: 0px;
+  background-image: url("https://4kwallpapers.com/images/wallpapers/dark-background-abstract-background-network-3d-background-7680x4320-8324.png");
+  background-position: center;
+  background-size: cover;
 }
+
+
+#contact{
+  display: flex;
+  width: 1440px;
+  height: 958px;
+  align-items: center;  
+  justify-content: center;
+  padding: 64px;
 }
