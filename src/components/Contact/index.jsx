@@ -1,17 +1,45 @@
 import styles from "../styles.module.css";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  function sendEmail(e) {
+    e.preventDefault();
 
-  const clearText = () => {
-    setName(' ');
-    setEmail(' ');
-    setMessage(' ');
-  };
+    if (name === "" || email === "" || message === "") {
+      alert("Preencha todos os campos!");
+      return;
+    }
+
+    const templateParams = {
+      from_name: name,
+      message: message,
+      email: email,
+    };
+
+    emailjs
+      .send(
+        "service_k9tu0oo",
+        "template_f88z08c",
+        templateParams,
+        "wP0sveAxxoQ9X4vq5"
+      )
+      .then(
+        (response) => {
+          alert("EMAIL ENVIADO", response.status, response.text);
+          setName("");
+          setEmail("");
+          setMessage("");
+        },
+        (error) => {
+          alert("ERRO:", error);
+        }
+      );
+  }
 
   return (
     <div className={styles.container}>
@@ -23,23 +51,25 @@ export default function Contact() {
         </p>
         <form className={styles.formContainer}>
           <label htmlFor="name">Name</label>
-          <textarea
+          <input
             onChange={(e) => setName(e.target.value)}
             className={styles.textArea}
             name="name"
             value={name}
             id="name"
-          ></textarea>
+            type="text"
+          ></input>
           <label className={styles.space} htmlFor="email">
             Email
           </label>
-          <textarea
+          <input
             onChange={(e) => setEmail(e.target.value)}
             className={styles.textArea}
             value={email}
             name="email"
             id="email"
-          ></textarea>
+            type="text"
+          ></input>
           <label className={styles.space} htmlFor="message">
             Message
           </label>
@@ -61,9 +91,7 @@ export default function Contact() {
             </a>
           </label>
         </div>
-        <button type="submit" onClick={clearText} className={styles.button}>
-          Enviar
-        </button>
+        <button onClick={sendEmail} type="submit" className={styles.button}><h3>Enviar</h3></button>
       </div>
     </div>
   );
