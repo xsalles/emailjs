@@ -1,8 +1,9 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+EmailJS é uma biblioteca JavaScript que facilita o envio de emails diretamente de sites, e com isso, ele faz o trabalho que um sistema back-end teria. Com o EmailJS, a gente conecta um formulário de contato a um serviço de email. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Por exemplo, o EmailJS permite que usuários de um site enviem mensagens, como já dito, através de um formulário de contato, com as mensagens sendo entregues diretamente na caixa de entrada de email do destinatário. Também pode ser usado para enviar emails automáticos (o famoso auto-reply) em resposta a ações do usuário, como confirmações de inscrição ou recibos de compras. Os emails enviados podem ser personalizados com dados dinâmicos coletados, tendo assim, uma melhor relação com o usuário.
+
+Documentação EmailJS: https://www.emailjs.com/docs/
+
